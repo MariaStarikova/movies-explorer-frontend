@@ -1,0 +1,64 @@
+.navigation {}
+
+.navigation__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .navigation__movies {
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+  
+  .navigation__saved_movies {
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    margin-left: 21px;
+  }
+  
+  .navigation__btn {
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+
+  .navigation__btn_light {
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .navigation__profile {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+  }
+
+  .navigation__subtitle {
+    margin-left: 50px;
+    margin-right: 14px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+  }
+  

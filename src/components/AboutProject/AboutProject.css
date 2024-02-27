@@ -1,0 +1,104 @@
+.project {
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+.project__title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.23;
+  text-align: left;
+  letter-spacing: -1.05px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  margin: 110px auto 0;
+}
+
+.project__description {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-bottom: 110px;
+  gap: 90px;
+}
+
+.project__description-content {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.project__description-title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.85px;
+  text-align: left;
+  margin: 20px 0 0;
+}
+
+.project__description-text {
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  text-align: left;
+  max-width: 100%;
+  margin-top: 26px;
+  margin-bottom: 0;
+}
+
+.project__deadlines {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 36px 17px;
+  gap: 16px 0;
+  justify-content: stretch;
+  /* align-items: center; */
+  /* align-items: stretch; */
+  padding-bottom: 108px;
+}
+
+.project__deadlines-week {
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  text-align: center;
+  background-color: rgba(242, 242, 242, 1);
+  margin: 0;
+  /* height: 100%; */
+  padding-top: 9px;
+  padding-bottom: 9px;
+  /* align-self: center; */
+  
+}
+
+.project__deadlines-tech {
+  color: rgba(160, 160, 160, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  text-align: center;
+  letter-spacing: 0.4px;
+  margin: 0;
+  /* align-self: center; */
+  padding: 0;
+}
+
+.project__deadlines-week_dark {
+  color: rgba(255, 255, 255, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 1);
+  margin: 0;
+  /* height: 100%; */
+  padding-top: 9px;
+  padding-bottom: 9px;
+  /* align-self: center; */
+}
