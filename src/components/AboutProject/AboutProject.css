@@ -57,8 +57,6 @@
   grid-template-rows: 36px 17px;
   gap: 16px 0;
   justify-content: stretch;
-  /* align-items: center; */
-  /* align-items: stretch; */
   padding-bottom: 108px;
 }
 
@@ -70,11 +68,8 @@
   text-align: center;
   background-color: rgba(242, 242, 242, 1);
   margin: 0;
-  /* height: 100%; */
   padding-top: 9px;
   padding-bottom: 9px;
-  /* align-self: center; */
-  
 }
 
 .project__deadlines-tech {
@@ -85,7 +80,6 @@
   text-align: center;
   letter-spacing: 0.4px;
   margin: 0;
-  /* align-self: center; */
   padding: 0;
 }
 
@@ -97,8 +91,100 @@
   text-align: center;
   background-color: rgba(0, 0, 0, 1);
   margin: 0;
-  /* height: 100%; */
   padding-top: 9px;
   padding-bottom: 9px;
-  /* align-self: center; */
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .project {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .project__title {
+    padding-bottom: 23px;
+    margin: 90px auto 0;
+  }
+
+  .project__description-content {
+    max-width: 430px;
+  }
+
+  .project__description {
+    gap: 36px;
+    margin-bottom: 92px;
+  }
+
+  .project__description-text {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 23px;
+  }
+
+  .project__deadlines {
+    grid-template-columns: 21% 79%;
+    padding-bottom: 88px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .project {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .project__title {
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.04em;
+    margin: 71px auto 0;
+    padding-bottom: 27px;
+  }
+
+  .project__description {
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    gap: 56px;
+  }
+
+  .project__description-title {
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.04em;
+    margin-top: 1px;
+  }
+
+  .project__description-text {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-top: 15px;
+  }
+
+  .project__deadlines {
+    grid-template-columns: 35.2% 64.8%;
+    grid-template-rows: 35px 17px;
+    gap: 11px 0;
+    padding-bottom: 69px;
+  }
+
+  .project__deadlines-week {
+    font-size: 11px;
+    line-height: 1.18;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .project__deadlines-tech {
+    font-size: 11px;
+    line-height: 1.18;
+    letter-spacing: 0px;
+  }
+
+  .project__deadlines-week_dark {
+    font-size: 11px;
+    line-height: 1.18;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 }

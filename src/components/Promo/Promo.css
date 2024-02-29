@@ -5,7 +5,7 @@
 
 .promo__title {
   color: #000;
-  padding-top: 182px;
+  padding-top: 178px;
   padding-bottom: 224px;
   font-style: normal;
   font-weight: 400;
@@ -20,8 +20,35 @@
 
 .promo__logo {
   position: absolute;
-  top: 80px;
+  top: 76px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .promo__title {
+    padding-top: 320px;
+    padding-bottom: 342px;
+  }
+
+  .promo__logo {
+    top: 217px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .promo__title {
+    font-size: 31px;
+    line-height: 1.26;
+    letter-spacing: -0.04em;
+    max-width: 300px;
+    padding-top: 201px;
+    padding-bottom: 246px;
+  }
+
+  .promo__logo {
+    width: 248px;
+    top: 136px;
+  }
 }

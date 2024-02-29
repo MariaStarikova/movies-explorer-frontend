@@ -5,7 +5,6 @@
 }
 
 .footer__container {
-  
 }
 
 .footer__title {
@@ -50,4 +49,52 @@
   cursor: pointer;
   color: rgba(0, 0, 0, 1);
   padding-left: 20px;
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .footer {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .footer {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .footer__title {
+    font-size: 12px;
+    line-height: 1.25;
+    padding-bottom: 21px;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    margin: 0 auto;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__author {
+    padding-top: 16px;
+    font-size: 12px;
+    line-height: 1.45;
+    order: 1;
+  }
+
+  .footer__link {
+    font-size: 12px;
+    line-height: 1.45;
+    padding-left: 0px;
+    padding-bottom: 10px;
+  }
 }

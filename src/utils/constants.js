@@ -1,7 +1,7 @@
 export const initialCards = [
   {
     id: '1',
-    nameRU: '«Роллинг Стоунз» в изгнании',
+    nameRU: '33 слова о дизайне',
     nameEN: 'Stones in Exile',
     director: 'Стивен Кайак ',
     country: 'США',

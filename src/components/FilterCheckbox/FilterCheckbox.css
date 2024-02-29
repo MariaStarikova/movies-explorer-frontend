@@ -83,3 +83,23 @@
 .filter .filter__input:checked:hover {
   background-color: rgba(43, 224, 128, 1);
 }
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .filter {
+    margin-right: 20px;
+    padding-left: 21px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .filter {
+    border: none;
+    padding: 0;
+    margin: 35px auto 0;
+  }
+
+  .filter__title {
+    font-size: 11px;
+    line-height: 1.64;
+  }
+}

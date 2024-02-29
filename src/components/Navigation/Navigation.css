@@ -1,64 +1,122 @@
-.navigation {}
+.navigation {
+}
 
 .navigation__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navigation__movies {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  margin-bottom: 2px;
+}
+
+.navigation__saved_movies {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  margin-left: 21px;
+  margin-bottom: 2px;
+}
+
+.navigation__btn {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 4px;
+}
+
+.navigation__btn_light {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 4px;
+}
+
+.navigation__profile {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigation__subtitle {
+  /* margin-left: 50px;
+  margin-right: 14px; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  margin: 11px 14px 14px 50px;
+  /* margin-bottom: 2px; */
+  /* margin-bottom: 10px; */
+}
+
+.navigation__signup {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 0px;
+  cursor: pointer;
+}
+
+.navigation__signin {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 0px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 8px 20px 8px 20px;
+  border-radius: 3px;
+  margin-left: 30px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.navigation__container_mobile {
+  width: 28px;
+  height: 23px;
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .navigation__signup {
+    margin-bottom: 3px;
   }
-  
-  .navigation__movies {
-    color: #000;
-    cursor: pointer;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.29;
-  }
-  
-  .navigation__saved_movies {
-    color: #000;
-    cursor: pointer;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.29;
-    margin-left: 21px;
-  }
-  
-  .navigation__btn {
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
+}
+
+@media screen and (max-width: 549px) {
+  .navigation__signin {
+    padding: 5px 12px 5px 12px;
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 2px;
+    margin-left: 14px;
   }
 
-  .navigation__btn_light {
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
+  .navigation__signup {
+    font-size: 10px;
+    line-height: 1.6;
   }
-  
-  .navigation__profile {
-    color: #000;
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-
-  }
-
-  .navigation__subtitle {
-    margin-left: 50px;
-    margin-right: 14px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-  }
-  
+}

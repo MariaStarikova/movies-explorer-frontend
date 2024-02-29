@@ -26,7 +26,9 @@ const Login = ({ handleLogin }) => {
   return (
     <section className="login">
       <div className="login__header">
-        <img className="login__logo" alt="Логотип" src={HeaderLogo} />
+        <Link className="header__link" to="/">
+          <img className="login__logo" alt="Логотип" src={HeaderLogo} />
+        </Link>
         <h2 className="login__title">Рады видеть!</h2>
       </div>
       <div className="form__container">

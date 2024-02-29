@@ -7,7 +7,7 @@ function Footer() {
 
   return (
     <footer class="footer">
-      {location.pathname === '/' ? (
+      {location.pathname === '/' || location.pathname === '/movies' || location.pathname === '/saved-movies' ? (
         <div className="footer__container">
           <h2 className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</h2>
           <div class="footer__nav">
@@ -33,9 +33,7 @@ function Footer() {
           </div>
         </div>
       ) : null}
-      {location.pathname === '/profile' ? <div className="footer__container_none"></div> : null}
-      {location.pathname === '/signup' ? <div className="footer__container_none"></div> : null}
-      {location.pathname === '/signin' ? <div className="footer__container_none"></div> : null}
+      {location.pathname === '/profile' || location.pathname === '/signup' || location.pathname === '/signin' ? <div className="footer__container_none"></div> : null}
     </footer>
   );
 }

@@ -55,3 +55,62 @@
 .portfolio__link:last-child {
   border-bottom: none;
 }
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .portfolio {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .portfolio__title {
+    margin: 91px 0 29px;
+  }
+
+  .portfolio__link-subtitle {
+    font-size: 28px;
+  }
+
+  .portfolio__link-icon {
+    width: 17px;
+    height: 35px;
+    padding-top: 9px;
+  }
+
+  .portfolio__links {
+    padding-bottom: 90px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .portfolio {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .portfolio__title {
+    margin: 69px 0 20px;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
+  .portfolio__links {
+    padding-bottom: 70px;
+  }
+
+  .portfolio__link {
+    padding-bottom: 19px;
+    padding-top: 20px;
+  }
+
+  .portfolio__link-subtitle {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  .portfolio__link-icon {
+    height: 22.6px;
+    width: 11px;
+    padding-top: 2px;
+    padding-right: 4px;
+  }
+}

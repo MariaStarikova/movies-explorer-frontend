@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
-// import {initialCards} from '../../utils/constants.js';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';
+import Popup from '../Popup/Popup';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 
 function App() {
+  const [loading, setLoading] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [isOpenPopup, setOpenPopup] = useState(false);
+
+  function handleBurgerClick() {
+    setOpenPopup(true);
+  }
+
+  function closePopup() {
+    setOpenPopup(false);
+  }
+
   return (
+    <CurrentUserContext.Provider value={currentUser}>
     <div className="page">
-      <Header />
+      <Header loggedIn={loggedIn} onOpenPopup={handleBurgerClick}/>
       <Routes>
         <Route
           path="/signup"
@@ -25,7 +40,7 @@ function App() {
             // handleRegister={handleRegister}
             // isRegisterSuccess={isRegisterSuccess}
             />
-          }
+          } 
         />
         <Route
           path="/signin"
@@ -44,7 +59,7 @@ function App() {
         />
         <Route 
         path="/movies"
-        element={<Movies />}
+        element={<Movies loading={loading}/>}
         />
         <Route 
         path="/saved-movies"
@@ -57,8 +72,12 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-      
+      <Popup 
+      isOpen={isOpenPopup}
+      onClose={closePopup} 
+      />
     </div>
+    </CurrentUserContext.Provider>
   );
 }
 

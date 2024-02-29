@@ -24,7 +24,9 @@ const Register = ({ handleRegister }) => {
   return (
     <section className="register">
       <div className="register__header">
-        <img className="register__logo" alt="Логотип" src={HeaderLogo} />
+        <Link className="header__link" to="/">
+          <img className="register__logo" alt="Логотип" src={HeaderLogo} />
+        </Link>
         <h2 className="register__title">Добро пожаловать!</h2>
       </div>
       <div className="form__container">
@@ -60,7 +62,7 @@ const Register = ({ handleRegister }) => {
             // onChange={handleChangePassword}
             required
           ></input>
-          <span className="form__input-error"></span>
+          <span className="form__input-error">Что-то пошло не так...</span>
           <span className="input-title-error"></span>
           <button className="form__button-submit_register" type="submit">
             Зарегистрироваться

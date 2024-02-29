@@ -70,3 +70,85 @@
   line-height: 1.21;
   letter-spacing: -0.35px;
 }
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .techs {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .techs__title {
+    padding-top: 90px;
+  }
+
+  .techs__description-title {
+    padding-top: 80px;
+  }
+
+  .techs__description-text {
+    max-width: 420px;
+    letter-spacing: -0.5px;
+    padding-top: 22px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .techs__stack {
+    grid-template-columns: repeat(7, 84px);
+    padding-top: 71px;
+    padding-bottom: 77px;
+  }
+
+  .techs__stack-item {
+    padding-bottom: 21px;
+    letter-spacing: -0.4px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .techs {
+    background-color: rgba(255, 255, 255, 1);
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .techs__title {
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.04em;
+    padding-top: 68px;
+    padding-bottom: 27px;
+  }
+
+  .techs__description-title {
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    padding-top: 60px;
+  }
+
+  .techs__description-text {
+    font-size: 11px;
+    line-height: 1.45;
+    letter-spacing: -0.04em;
+    max-width: 292px;
+    padding-top: 24px;
+  }
+
+  .techs__stack {
+    grid-template-columns: repeat(2, 84px);
+    padding-top: 49px;
+    padding-bottom: 70px;
+  }
+
+  .techs__stack-item {
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+    margin: 0;
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+}

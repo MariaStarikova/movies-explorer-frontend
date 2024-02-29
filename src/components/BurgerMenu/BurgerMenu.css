@@ -1,0 +1,16 @@
+.burger__button {
+  background-image: url('../../images/BurgerIcon.svg');
+  background-color: transparent;
+  border: none;
+  width: 28px;
+  height: 23px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 549px) {
+  .burger__button {
+    background-image: url('../../images/BurgerMobile.svg');
+    width: 22px;
+    height: 21px;
+  }
+}

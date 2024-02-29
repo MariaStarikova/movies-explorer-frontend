@@ -59,7 +59,7 @@ const Profile = ({ handleLogin }) => {
         <button
           className="profile__out"
           type="button"
-          // onClick={handleLogout}
+          // onClick={}
         >
           Выйти из аккаунта
         </button>
