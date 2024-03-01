@@ -1,0 +1,113 @@
+.search {
+  padding-top: 65px;
+  padding-bottom: 70px;
+  border-bottom: 1px solid rgba(232, 232, 232, 1);
+}
+
+.search__form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  border-radius: 9px;
+  box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+  margin: 0 auto;
+}
+
+.search__form-container {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+.form__icon {
+  width: 15px;
+  height: 15px;
+  margin-left: 29px;
+  margin-right: 16px;
+}
+
+.form__input-search {
+  border: none;
+  color: rgba(0, 0, 0, 1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.11;
+  letter-spacing: 0.9px;
+  text-align: left;
+  flex-grow: 2;
+}
+
+.form__input-search:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(134, 129, 129);
+}
+
+.form__input_search::placeholder {
+  color: rgba(160, 160, 160, 1);
+}
+
+.form__button-search {
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 1);
+  width: 58.65px;
+  height: 34px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.64;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-right: 19px;
+  margin-left: 21.35px;
+  cursor: pointer;
+}
+
+.form__button-search:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
+}
+
+@media screen and (min-width: 605px) and (max-width: 1024px) {
+  .search {
+    padding-top: 75px;
+    padding-bottom: 109px;
+  }
+}
+
+@media screen and (max-width: 604px) {
+  .search {
+    padding-top: 74px;
+    padding-bottom: 34px;
+  }
+
+  .search__form {
+    box-shadow: none;
+    border-radius: none;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .form__icon {
+    display: none;
+  }
+
+  .search__form-container {
+    border-radius: 9px;
+    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+    height: 72px;
+    width: 300px;
+  }
+
+  .form__input-search {
+    margin-left: 18px;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0px;
+  }
+}
