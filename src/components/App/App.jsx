@@ -30,53 +30,38 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-    <div className="page">
-      <Header loggedIn={loggedIn} onOpenPopup={handleBurgerClick}/>
-      <Routes>
-        <Route
-          path="/signup"
-          element={
-            <Register
-            // handleRegister={handleRegister}
-            // isRegisterSuccess={isRegisterSuccess}
+      <div className="page">
+        <Header loggedIn={loggedIn} onOpenPopup={handleBurgerClick} />
+        <main>
+          <Routes>
+            <Route
+              path="/signup"
+              element={
+                <Register
+                // handleRegister={handleRegister}
+                // isRegisterSuccess={isRegisterSuccess}
+                />
+              }
             />
-          } 
-        />
-        <Route
-          path="/signin"
-          element={
-            <Login
-            // handleLogin={handleLogin}
-            // loggedIn={loggedIn}
+            <Route
+              path="/signin"
+              element={
+                <Login
+                // handleLogin={handleLogin}
+                // loggedIn={loggedIn}
+                />
+              }
             />
-          }
-        />
-        <Route 
-        path="/" 
-        element={
-        <Main 
-        />} 
-        />
-        <Route 
-        path="/movies"
-        element={<Movies loading={loading}/>}
-        />
-        <Route 
-        path="/saved-movies"
-        element={<SavedMovies />}
-        />
-        <Route 
-        path="/profile"
-        element={<Profile />}
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-      <Popup 
-      isOpen={isOpenPopup}
-      onClose={closePopup} 
-      />
-    </div>
+            <Route path="/" element={<Main />} />
+            <Route path="/movies" element={<Movies loading={loading} />} />
+            <Route path="/saved-movies" element={<SavedMovies />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Popup isOpen={isOpenPopup} onClose={closePopup} />
+        </main>
+        <Footer />
+      </div>
     </CurrentUserContext.Provider>
   );
 }

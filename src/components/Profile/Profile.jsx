@@ -1,8 +1,10 @@
 // import React, { useState } from 'react';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Profile.css';
 
 const Profile = ({ handleLogin }) => {
+  const navigate = useNavigate();
   //   const [email, setEmail] = useState('');
   //   const [password, setPassword] = useState('');
 
@@ -21,45 +23,53 @@ const Profile = ({ handleLogin }) => {
   //     handleLogin({ password, email });
   //   }
 
+  function handleClickOut() {
+    navigate('/', { replace: true });
+  }
+
   return (
-    <section className="profile">
-      <h2 className="profile__title">Привет, Виталий!</h2>
-      <div className="form__container">
+    <section className="profile page__profile">
+      <h1 className="profile__title">Привет, Виталий!</h1>
+      <div className="form profile__form">
         <form
           className="form__profile"
           // onSubmit={handleSubmit}
         >
             <div className="form__input-block form__input-block_border">
-          <label className="form__name-input_profile">Имя</label>
+          <label className="form__name-input form__name-input_profile">Имя</label>
           <input
-            className="form__input_profile"
+            className="form__input form__input_profile"
             type="text"
             name="name"
+            minLength="2"
+            maxLength="200"
+            placeholder="Иван"
             // value={email}
             // onChange={handleChangeEmail}
             required
           ></input>
           </div>
           <div className="form__input-block">
-          <label className="form__name-input_profile">E-mail</label>
+          <label className="form__name-input form__name-input_profile">E-mail</label>
           <input
-            className="form__input_profile"
+            className="form__input form__input_profile"
             type="email"
             name="email"
+            placeholder="pochta@yandex.ru"
             // value={password}
             // onChange={handleChangePassword}
             required
           ></input>
           </div>
-          <span className="input-title-error"></span>
-          <button className="form__button-submit_profile" type="submit">
+          <span className="form__input-title-error"></span>
+          <button className="form__button-edit" type="submit">
             Редактировать
           </button>
         </form>
         <button
           className="profile__out"
           type="button"
-          // onClick={}
+          onClick={handleClickOut}
         >
           Выйти из аккаунта
         </button>

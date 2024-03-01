@@ -32,6 +32,11 @@
   cursor: pointer;
 }
 
+.popup__close-button:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
+}
+
 .popup__container {
   position: relative;
   background-color: rgba(255, 255, 255, 1);
@@ -51,6 +56,17 @@
   text-align: center;
   text-decoration: none;
   margin-top: 160px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.popup__main:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
+.popup__main_border {
+  border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
 
 .popup__movies {
@@ -61,8 +77,19 @@
   line-height: 1.22;
   letter-spacing: 0px;
   text-align: center;
-  margin-top: 29px;
-  margin-bottom: 28px;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.popup__movies:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
+.popup__movies_border {
+  border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
 
 .popup__saved-movies {
@@ -73,6 +100,17 @@
   line-height: 1.22;
   letter-spacing: 0px;
   text-align: center;
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.popup__saved-movies:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
+.popup__saved-movies_border {
+  border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
 
 .popup__profile {
@@ -82,24 +120,38 @@
   align-items: center;
   gap: 11px;
   cursor: pointer;
-  margin-top: 611px;
+  margin-top: 605px;
 }
 
 .popup__subtitle {
   color: rgba(0, 0, 0, 1);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.42;
   letter-spacing: 0px;
   text-align: left;
   margin-right: 0px;
 }
 
+.popup__subtitle:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
+.popup__subtitle_border {
+  font-weight: 500;
+}
+
 .popup__btn {
   width: 30px;
   height: 30px;
-  margin-left: 3px;
+  margin-left: 3px; 
   margin-bottom: 1px;
+}
+
+.popup__btn:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
 }
 
 @media screen and (max-width: 549px) {
@@ -120,7 +172,7 @@
     margin-top: 24px;
     margin-bottom: 24px;
   }
-  
+
   .popup__profile {
     margin-top: 435px;
   }

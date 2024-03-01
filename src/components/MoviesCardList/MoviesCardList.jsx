@@ -24,9 +24,9 @@ function MoviesCardList({ loading }) {
           <Preloader />
         ) : (
           <div className="cards__container">
-            <ul className="card__list">
+            <ul className="cards__list">
               {initialCards.map(card => (
-                <li className="card__item">
+                <li className="cards__item">
                   <MoviesCard
                     id={card.id}
                     name={card.nameRU}
@@ -57,9 +57,9 @@ function MoviesCardList({ loading }) {
           <Preloader />
         ) : (
           <div className="cards__container">
-            <ul className="card__list">
+            <ul className="cards__list">
               {initialCards.map(card => (
-                <li className="card__item">
+                <li className="cards__item">
                   <MoviesCard
                     id={card.id}
                     name={card.nameRU}
@@ -89,9 +89,9 @@ function MoviesCardList({ loading }) {
         <Preloader />
       ) : (
         <div className="cards__container">
-          <ul className="card__list">
+          <ul className="cards__list">
             {initialCards.map(card => (
-              <li className="card__item">
+              <li className="cards__item">
                 <MoviesCard
                   id={card.id}
                   name={card.nameRU}

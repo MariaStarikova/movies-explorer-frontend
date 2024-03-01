@@ -19,19 +19,17 @@ function Navigation( props ) {
        };
      }, []);
 
-     
 
-
-     if (width > 1024) {
+     if (width > 768) {
 
   return (
-    <div className="navigation">
+    <div className="navigation header__navigation">
         {props.loggedIn && location.pathname === '/' ? (
         <div className="navigation__container">
       <Link className="navigation__movies" to="/movies">
         Фильмы
       </Link>
-      <Link className="navigation__saved_movies" to="/saved-movies">
+      <Link className="navigation__saved-movies" to="/saved-movies">
         Сохраненные фильмы
       </Link>
       <Link className="navigation__profile" to="/profile">
@@ -52,15 +50,15 @@ function Navigation( props ) {
        ) : null }
        {location.pathname === '/movies' || location.pathname === '/saved-movies' || location.pathname === '/profile' ? (
         <div className="navigation__container">
-      <Link className="navigation__movies" to="/movies">
+      <Link className={location.pathname !== '/movies' ? "navigation__movies" : "navigation__movies navigation__movies_bold"} to="/movies">
         Фильмы
       </Link>
-      <Link className="navigation__saved_movies" to="/saved-movies">
+      <Link className={location.pathname !== '/saved-movies' ? "navigation__saved-movies" : "navigation__saved-movies navigation__saved-movies_bold"} to="/saved-movies">
         Сохраненные фильмы
       </Link>
       <Link className="navigation__profile" to="/profile">
-        <p className="navigation__subtitle">Аккаунт</p>
-        <img className="navigation__btn_light" src={IconAvatarLight} alt="Картинка человечка"/>
+        <p className={location.pathname !== '/profile' ? "navigation__subtitle" : "navigation__subtitle navigation__subtitle_bold"}>Аккаунт</p>
+        <img className="navigation__btn navigation__btn_light" src={IconAvatarLight} alt="Картинка человечка"/>
       </Link>
       </div>
        ) : null }
@@ -69,13 +67,13 @@ function Navigation( props ) {
 } 
 
   return (
-  <div className="navigation">
-        {location.pathname === '/' ? (
-        <div className="navigation__container_mobile">
+  <div className="navigation header__navigation">
+        {props.loggedIn && location.pathname === '/' ? (
+        <div className="navigation__container navigation__container_mobile">
       <BurgerMenu onOpenPopup={props.onOpenPopup}/>
       </div>
        ) : null }
-       {/* {!props.loggedIn && location.pathname === '/' ? (
+       {!props.loggedIn && location.pathname === '/' ? (
         <div className="navigation__container">
       <Link className="navigation__signup" to="/signup">
       Регистрация
@@ -84,9 +82,9 @@ function Navigation( props ) {
       Войти
       </Link>
       </div>
-       ) : null } */}
+       ) : null }
        {location.pathname === '/movies' || location.pathname === '/saved-movies' || location.pathname === '/profile' ? (
-        <div className="navigation__container_mobile">
+        <div className="navigation__container navigation__container_mobile">
         <BurgerMenu onOpenPopup={props.onOpenPopup}/>
         </div>
        ) : null }

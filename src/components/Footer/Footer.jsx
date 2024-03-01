@@ -6,7 +6,7 @@ function Footer() {
   const location = useLocation();
 
   return (
-    <footer class="footer">
+    <footer class="footer page__footer">
       {location.pathname === '/' || location.pathname === '/movies' || location.pathname === '/saved-movies' ? (
         <div className="footer__container">
           <h2 className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</h2>
@@ -33,7 +33,7 @@ function Footer() {
           </div>
         </div>
       ) : null}
-      {location.pathname === '/profile' || location.pathname === '/signup' || location.pathname === '/signin' ? <div className="footer__container_none"></div> : null}
+      {location.pathname === '/profile' || location.pathname === '/signup' || location.pathname === '/signin' ? <div className="footer__container footer__container_none"></div> : null}
     </footer>
   );
 }

@@ -24,42 +24,44 @@ const Login = ({ handleLogin }) => {
   //   }
 
   return (
-    <section className="login">
+    <section className="login page__login">
       <div className="login__header">
-        <Link className="header__link" to="/">
-          <img className="login__logo" alt="Логотип" src={HeaderLogo} />
+        <Link className="login__header-link" to="/">
+          <img className="login__header-logo" alt="Логотип" src={HeaderLogo} />
         </Link>
-        <h2 className="login__title">Рады видеть!</h2>
+        <h1 className="login__header-title">Рады видеть!</h1>
       </div>
-      <div className="form__container">
+      <div className="form login__form">
         <form
           className="form__user"
           // onSubmit={handleSubmit}
         >
-          <label className="form__name-input">E-mail</label>
+          <label className="form__name-input form__name-input_login">E-mail</label>
           <input
-            className="form__input"
+            className="form__input form__input_login"
             type="email"
             name="email"
+            placeholder="pochta@yandex.ru"
             // value={email}
             // onChange={handleChangeEmail}
             required
           ></input>
           <span className="form__input-error"></span>
-          <label className="form__name-input">Пароль</label>
+          <label className="form__name-input form__name-input_login">Пароль</label>
           <input
-            className="form__input"
+            className="form__input form__input_login"
             type="password"
             name="password"
             minLength="2"
             maxLength="200"
+            placeholder="Пароль"
             // value={password}
             // onChange={handleChangePassword}
             required
           ></input>
           <span className="form__input-error"></span>
-          <span className="input-title-error"></span>
-          <button className="form__button-submit" type="submit">
+          <span className="form__input-title-error"></span>
+          <button className="form__button-submit form__button-submit_login" type="submit">
             Войти
           </button>
           <div className="form__register">

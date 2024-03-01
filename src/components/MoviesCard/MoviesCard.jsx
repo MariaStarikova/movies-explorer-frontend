@@ -26,7 +26,7 @@ function MoviesCard(props) {
           <div className="card__top">
             <button
               type="button"
-              className={!isSaveMovie ? "card__button" : "card__button_active" }
+              className={!isSaveMovie ? "card__button_hidden" : "card__button" }
               onClick={handleClickSave}
             >
               Сохранить
@@ -42,10 +42,10 @@ function MoviesCard(props) {
       ) : null}
       {location.pathname === '/saved-movies' ? (
         <div className="card__container">
-          <div className="card__top_saved">
+          <div className="card__top-saved">
             <button
               type="button"
-              className="card__button_del"
+              className="card__button-del"
               // onClick={}
             ></button>
             <img className="card__image" src={props.image} alt={props.name} />

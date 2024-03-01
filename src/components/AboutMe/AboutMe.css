@@ -65,6 +65,11 @@
   text-align: left;
 }
 
+.me__description-git:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
 .me__description-img {
   width: 270px;
   height: 327px;

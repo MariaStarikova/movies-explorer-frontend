@@ -8,7 +8,7 @@ function Header( props ) {
     const location = useLocation();
 
     return(
-        <header className="header">
+        <header className="header page__header">
             {location.pathname === '/' ? (
             <div className="header__container">
                 <Link className="header__link" to="/">
@@ -18,7 +18,7 @@ function Header( props ) {
             </div>
             ) : null }
             {location.pathname === '/movies' || location.pathname === '/saved-movies' || location.pathname === '/profile' ? (
-            <div className="header__container_light">
+            <div className="header__container header__container_light">
                 <Link className="header__link" to="/">
                 <img className="header__logo" alt="Логотип" src={HeaderLogo}/>
                 </Link>

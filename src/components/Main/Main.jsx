@@ -9,14 +9,14 @@ import Portfolio from '../Portfolio/Portfolio';
 
 function Main() {
     return(
-        <main>
+        <section>
             <Promo />
             <NavTab />
             <AboutProject />
             <Techs />
             <AboutMe />
             <Portfolio />
-        </main>
+        </section>
     )
 }
 

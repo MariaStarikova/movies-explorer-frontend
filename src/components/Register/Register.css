@@ -16,13 +16,22 @@
   padding-bottom: 38px;
 }
 
-.register__logo {
+.register__header-link {
+  cursor: pointer;
+}
+
+.register__header-link:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
+.register__header-logo {
   width: 38px;
   height: 38px;
   margin: 0 0 37px;
 }
 
-.register__title {
+.register__header-title {
   font-size: 24px;
   font-weight: 500;
   line-height: 1.21;
@@ -31,7 +40,7 @@
   margin: 0;
 }
 
-.form__container {
+.register__form {
 }
 
 .form__user {
@@ -48,6 +57,9 @@
   letter-spacing: 0em;
   text-align: left;
   align-self: flex-start;
+}
+
+.form__name-input_register {
   margin: 0 0 10px 2px;
 }
 
@@ -57,12 +69,25 @@
   line-height: 1.23;
   letter-spacing: 0em;
   text-align: left;
-  width: 396px;
-  height: 44px;
   border: none;
   border-radius: 8px;
   background-color: rgba(249, 249, 249, 1);
-  /* margin-bottom: 10px; */
+}
+
+.form__input::placeholder {
+  color: rgb(190, 189, 189);
+}
+
+.form__input:focus {
+  outline: none;
+  border: none;
+  border: 1px solid rgb(134, 129, 129);
+}
+
+.form__input_register {
+  width: 396px;
+  height: 44px;
+  margin-bottom: 10px;
 }
 
 .form__input-error {
@@ -79,23 +104,31 @@
   opacity: 0;
 }
 
-.input-title-error {
+.form__input-title-error {
 }
 
-.form__button-submit_register {
+.form__button-submit {
   color: rgba(255, 255, 255, 1);
   border: none;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.21;
-  letter-spacing: 0.7px;
   text-align: center;
   background-color: rgba(0, 0, 0, 1);
-  width: 396px;
-  height: 45px;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.form__button-submit:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
+}
+
+.form__button-submit_register {
+  letter-spacing: 0.7px;
   margin-top: 57px;
+  width: 396px;
+  height: 45px;
 }
 
 .form__login {
@@ -127,6 +160,11 @@
   margin: 0 0 0 6px;
 }
 
+.form__login-link:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
 @media screen and (min-width: 550px) and (max-width: 1024px) {
   .register__header {
     padding-top: 231px;
@@ -150,16 +188,16 @@
     align-items: center;
   }
 
-  .register__logo {
+  .register__header-logo {
     margin: 0 0 47px;
   }
 
-  .register__title {
+  .register__header-title {
     font-weight: 400;
     text-align: center;
   }
 
-  .form__input {
+  .form__input_register {
     width: 260px;
     margin-bottom: 9px;
   }

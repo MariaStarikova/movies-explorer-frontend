@@ -14,6 +14,23 @@
   height: 201px;
 }
 
+.card__button_hidden {
+  border: none;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0px;
+  text-align: center;
+  width: 72px;
+  height: 21px;
+  border-radius: 30px;
+  background-color: rgba(249, 249, 249, 1);
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  opacity: 0;
+}
+
 .card__button {
   border: none;
   font-size: 10px;
@@ -31,27 +48,15 @@
   opacity: 0;
 }
 
-.card__button_active {
-  border: none;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 0.9;
-  letter-spacing: 0px;
-  text-align: center;
-  width: 72px;
-  height: 21px;
-  border-radius: 30px;
-  background-color: rgba(249, 249, 249, 1);
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  opacity: 0;
-}
-
-.card__top:hover .card__button_active {
+.card__top:hover .card__button {
   opacity: 1;
   transition: opacity 0.4s linear;
   cursor: pointer;
+}
+
+.card__top:hover .card__button:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
 }
 
 .card__icon {
@@ -64,7 +69,7 @@
   cursor: pointer;
 }
 
-.card__button_del {
+.card__button-del {
   border: none;
   position: absolute;
   top: 14px;
@@ -77,10 +82,15 @@
   opacity: 0;
 }
 
-.card__top_saved:hover .card__button_del {
+.card__top-saved:hover .card__button-del {
   opacity: 1;
   transition: opacity 0.4s linear;
   cursor: pointer;
+}
+
+.card__top-saved:hover .card__button-del:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
 }
 
 .card__image {
@@ -139,7 +149,7 @@
     height: 190px;
   }
 
-  .card__top_saved {
+  .card__top-saved {
     height: 190px;
   }
 
@@ -167,7 +177,7 @@
     height: 168px;
   }
 
-  .card__top_saved {
+  .card__top-saved {
     height: 168px;
   }
 
@@ -188,7 +198,7 @@
     margin-top: 1px;
   }
 
-  .card__button_active {
+  .card__button {
     top: 10px;
     right: 10px;
   }

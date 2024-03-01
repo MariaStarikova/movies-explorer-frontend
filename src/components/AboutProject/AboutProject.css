@@ -18,6 +18,7 @@
 .project__description {
   display: flex;
   flex-direction: row;
+  /* justify-content: space-between; */
   margin-top: 50px;
   margin-bottom: 110px;
   gap: 90px;
@@ -93,6 +94,15 @@
   margin: 0;
   padding-top: 9px;
   padding-bottom: 9px;
+}
+
+@media screen and (min-width: 1400px) {
+  .project__description {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-content: stretch;
+    justify-items: center;
+  }
 }
 
 @media screen and (min-width: 550px) and (max-width: 1024px) {

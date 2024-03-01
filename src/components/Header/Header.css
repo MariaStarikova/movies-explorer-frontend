@@ -1,5 +1,5 @@
 .header {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
@@ -13,11 +13,11 @@
 }
 
 .header__container_light {
-  padding: 16px 70px 20px 70px;
+  /* padding: 16px 70px 20px 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -25,12 +25,17 @@
   cursor: pointer;
 }
 
+.header__link:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
 .header__logo {
   margin-top: 2px;
   max-width: 38px;
 }
 
-@media screen and (min-width: 550px) and (max-width: 1024px) {
+@media screen and (min-width: 550px) and (max-width: 768px) {
   .header__container {
     padding: 16px 30px 20px 30px;
   }

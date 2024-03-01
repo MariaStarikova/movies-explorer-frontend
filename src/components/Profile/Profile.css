@@ -14,10 +14,10 @@
   margin: 68px auto 106px;
 }
 
-.form__container {
+.form {
 }
 
-.form__user {
+.form__profile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,20 +37,19 @@
 }
 
 .form__name-input_profile {
+  color: rgba(0, 0, 0, 1);
   font-size: 11px;
   font-weight: 500;
   line-height: 1.19;
-  letter-spacing: 0px;
-  text-align: left;
   margin: 0;
   align-self: center;
 }
 
 .form__input_profile {
+  color: rgba(0, 0, 0, 1);
   font-size: 11px;
   font-weight: 400;
   line-height: 1.19;
-  letter-spacing: 0px;
   text-align: right;
   border: none;
   background-color: transparent;
@@ -58,10 +57,19 @@
   flex-grow: 2;
 }
 
+.form__input_profile:focus {
+  outline: none;
+  border: none;
+}
+
+.form__input-block:has(.form__input_profile:focus) {
+  border-bottom: 1px solid rgb(134, 129, 129);
+}
+
 .input-title-error {
 }
 
-.form__button-submit_profile {
+.form__button-edit {
   display: block;
   font-size: 13px;
   font-weight: 400;
@@ -72,6 +80,11 @@
   background-color: transparent;
   cursor: pointer;
   margin: 204px auto 15px;
+}
+
+.form__button-edit:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
 }
 
 .profile__out {
@@ -88,12 +101,17 @@
   margin: 0 auto 70px;
 }
 
+.profile__out:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
+}
+
 @media screen and (min-width: 550px) and (max-width: 1024px) {
   .profile__title {
     margin: 230px auto 79px;
   }
 
-  .form__button-submit_profile {
+  .form__button-edit {
     margin: 194px auto 15px;
   }
 
@@ -111,7 +129,7 @@
     width: 260px;
   }
 
-  .form__button-submit_profile {
+  .form__button-edit {
     margin: 362px auto 15px;
     font-size: 12px;
     line-height: 1.25;

@@ -16,13 +16,22 @@
   padding-bottom: 40px;
 }
 
-.login__logo {
+.login__header-link {
+  cursor: pointer;
+}
+
+.login__header-link:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
+.login__header-logo {
   width: 38px;
   height: 38px;
   margin: 0 0 37px;
 }
 
-.login__title {
+.login__header-title {
   font-size: 24px;
   font-weight: 500;
   line-height: 1.21;
@@ -31,7 +40,7 @@
   margin: 0;
 }
 
-.form__container {
+.login__form {
 }
 
 .form__user {
@@ -48,6 +57,9 @@
   letter-spacing: 0em;
   text-align: left;
   align-self: flex-start;
+}
+
+.form__name-input_login {
   margin: 0 0 10px 2px;
 }
 
@@ -57,19 +69,32 @@
   line-height: 1.23;
   letter-spacing: 0em;
   text-align: left;
-  width: 396px;
-  height: 44px;
   border: none;
   border-radius: 8px;
   background-color: rgba(249, 249, 249, 1);
+}
+
+.form__input_login {
+  width: 396px;
+  height: 44px;
   margin-bottom: 10px;
 }
 
 .form__input-error {
-  
+  color: rgba(255, 64, 98, 1);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+  /* margin-top: 10px; */
+  align-self: flex-start;
+  padding-bottom: 11px;
+  margin-left: 2px;
+  opacity: 0;
 }
 
-.input-title-error {
+.form__input-title-error {
 }
 
 .form__button-submit {
@@ -78,14 +103,17 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.21;
-  letter-spacing: 0.4px;
   text-align: center;
   background-color: rgba(0, 0, 0, 1);
-  width: 396px;
-  height: 45px;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.form__button-submit_login {
+  letter-spacing: 0.4px;
   margin-top: 156px;
+  width: 396px;
+  height: 45px;
 }
 
 .form__register {
@@ -117,17 +145,22 @@
   margin: 0 0 0 6px;
 }
 
+.form__register-link:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
 @media screen and (min-width: 550px) and (max-width: 1024px) {
   .login__header {
     padding-top: 232px;
     padding-bottom: 40px;
   }
 
-  .login__logo {
+  .login__header-logo {
     margin: 0 0 36px;
   }
 
-  .form__button-submit {
+  .form__button-submit_login {
     margin-top: 157px;
   }
   .form__register {
@@ -144,21 +177,21 @@
     align-items: center;
   }
   
-  .login__logo {
+  .login__header-logo {
     margin: 0 0 47px;
   }
   
-  .login__title {
+  .login__header-title {
     font-weight: 400;
     text-align: center;
   }
 
-  .form__input {
+  .form__input_login {
     width: 260px;
     margin-bottom: 9px;
   }
 
-  .form__button-submit {
+  .form__button-submit_login {
     width: 260px;
     margin-top: 246px;
     font-size: 12px;

@@ -35,6 +35,11 @@
   cursor: pointer;
 }
 
+.portfolio__link-item:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
 .portfolio__link-subtitle {
   color: rgba(0, 0, 0, 1);
   font-size: 30px;
@@ -50,6 +55,11 @@
   height: 39px;
   padding-top: 8px;
   padding-right: 5px;
+}
+
+.portfolio__link-icon:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
 }
 
 .portfolio__link:last-child {

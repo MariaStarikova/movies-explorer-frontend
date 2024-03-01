@@ -48,7 +48,7 @@
 }
 
 .filter .filter__input::after {
-  background-color: #fff;
+  background-color: rgba(245, 245, 245, 1);
   border-radius: 20px;
   content: '';
   height: 10px;
@@ -65,6 +65,7 @@
 .filter .filter__input:hover {
   background-color: #c9cbcd;
   transition-duration: 0s;
+  cursor: pointer;
 }
 
 .filter .filter__input:checked {
@@ -72,7 +73,7 @@
 }
 
 .filter .filter__input:checked::after {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 1);
   left: 21px;
 }
 
@@ -84,14 +85,14 @@
   background-color: rgba(43, 224, 128, 1);
 }
 
-@media screen and (min-width: 550px) and (max-width: 1024px) {
+@media screen and (min-width: 605px) and (max-width: 1024px) {
   .filter {
     margin-right: 20px;
     padding-left: 21px;
   }
 }
 
-@media screen and (max-width: 549px) {
+@media screen and (max-width: 604px) {
   .filter {
     border: none;
     padding: 0;

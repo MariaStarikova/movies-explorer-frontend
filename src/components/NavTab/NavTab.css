@@ -23,6 +23,11 @@
   text-underline-position: under;
 }
 
+.navtab__link:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
 @media screen and (max-width: 549px) {
   .navtab__links {
     justify-content: space-around;

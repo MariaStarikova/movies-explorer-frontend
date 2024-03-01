@@ -39,6 +39,11 @@
   cursor: pointer;
 }
 
+.not-found__back:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
 @media screen and (min-width: 550px) and (max-width: 1024px) {
   .not-found {
     padding-top: 408px;
