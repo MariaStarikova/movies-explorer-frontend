@@ -1,25 +1,35 @@
-// import React, { useState } from 'react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HeaderLogo from '../../images/headerLogo.svg';
 import { Link } from 'react-router-dom';
+import { useForm } from '../../utils/useForm';
 import './Register.css';
 
-const Register = ({ handleRegister }) => {
-  //   const [email, setEmail] = useState('');
-  //   const [password, setPassword] = useState('');
+const Register = ({ handleRegister, isMessageForm }) => {
+  const [buttonDisabled, setButtonDisabled] = useState(true); //Состояние для заблокированной кнопки
+  const { values, handleChange, isValid, errors } = useForm();
 
-  //   function handleChangeEmail(e) {
-  //     setEmail(e.target.value);
-  //   }
+  //Функция сабмита формы
+  function handleSubmit(e) {
+    e.preventDefault();
+    // if (!isValid) {
+    //   setButtonDisabled(true);
+    // } else {
+    //   setButtonDisabled(false);
+    handleRegister(values.name, values.email, values.password);
+    // }
+  }
 
-  //   function handleChangePassword(e) {
-  //     setPassword(e.target.value);
-  //   }
+  //Проверка валидности введенных данных
+  useEffect(() => {
+    const { name, email, password } = values;
+    if (isValid && (name || email || password)) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [isValid, values]);
 
-  //   function handleSubmit(e) {
-  //     e.preventDefault();
-  //     handleRegister(email, password);
-  //   }
+  console.log('errors', errors);
 
   return (
     <section className="register page__register">
@@ -30,46 +40,70 @@ const Register = ({ handleRegister }) => {
         <h1 className="register__header-title">Добро пожаловать!</h1>
       </div>
       <div className="form register__form">
-        <form
-          className="form__user"
-          // onSubmit={handleSubmit}
-        >
+        <form className="form__user" onSubmit={handleSubmit} noValidate>
           <label className="form__name-input form__name-input_register">Имя</label>
           <input
-            className="form__input form__input_register"
+            className={
+              !errors.name
+                ? 'form__input form__input_register'
+                : 'form__input form__input_register form__input_red'
+            }
             type="text"
-            // value={email}
-            // onChange={handleChangeEmail}
+            name="name"
+            value={values.name || ''}
+            onChange={handleChange}
             minLength="2"
             maxLength="30"
             placeholder="Иван"
             required
           ></input>
-          <span className="form__input-error"></span>
+          <span className="form__input-error form__input-error_register">{errors.name}</span>
           <label className="form__name-input form__name-input_register">E-mail</label>
           <input
-            className="form__input form__input_register"
+            className={
+              !errors.email
+                ? 'form__input form__input_register'
+                : 'form__input form__input_register form__input_red'
+            }
             type="email"
-            // value={email}
-            // onChange={handleChangeEmail}
+            name="email"
+            value={values.email || ''}
+            onChange={handleChange}
             placeholder="pochta@yandex.ru"
             required
           ></input>
-          <span className="form__input-error"></span>
+          <span className="form__input-error form__input-error_register">{errors.email}</span>
           <label className="form__name-input form__name-input_register">Пароль</label>
           <input
-            className="form__input form__input_register"
+            className={
+              !errors.password
+                ? 'form__input form__input_register'
+                : 'form__input form__input_register form__input_red'
+            }
             type="password"
-            minLength="2"
+            name="password"
+            minLength="5"
             maxLength="200"
             placeholder="Надежный пароль"
-            // value={password}
-            // onChange={handleChangePassword}
+            value={values.password || ''}
+            onChange={handleChange}
             required
           ></input>
-          <span className="form__input-error">Что-то пошло не так...</span>
-          <span className="form__input-title-error"></span>
-          <button className="form__button-submit form__button-submit_register" type="submit">
+          <span className="form__input-error form__input-error_register">{errors.password}</span>
+          <span
+            className={
+              isMessageForm
+                ? 'form__input-message form__input-message_register'
+                : 'input__not-message input__not-message_register'
+            }
+          >
+            {isMessageForm}
+          </span>
+          <button
+            className="form__button-submit form__button-submit_register"
+            type="submit"
+            disabled={buttonDisabled}
+          >
             Зарегистрироваться
           </button>
           <div className="form__login">

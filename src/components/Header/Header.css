@@ -13,11 +13,6 @@
 }
 
 .header__container_light {
-  /* padding: 16px 70px 20px 70px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; */
   background-color: rgba(255, 255, 255, 1);
 }
 

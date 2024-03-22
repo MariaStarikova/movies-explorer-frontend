@@ -75,26 +75,40 @@
 }
 
 .form__input_login {
-  width: 396px;
+  width: 381px;
   height: 44px;
-  margin-bottom: 10px;
+  padding-left: 15px;
+  /* margin-bottom: 10px; */
 }
 
+/* .form__input_login::placeholder {
+  padding-left: 15px;
+} */
+
 .form__input-error {
-  color: rgba(255, 64, 98, 1);
+  /* color: rgba(255, 64, 98, 1);
   font-size: 10px;
   font-weight: 400;
   line-height: 12px;
   letter-spacing: 0em;
   text-align: left;
-  /* margin-top: 10px; */
   align-self: flex-start;
   padding-bottom: 11px;
-  margin-left: 2px;
-  opacity: 0;
+  margin-left: 2px; */
+  /* opacity: 0; */
 }
 
-.form__input-title-error {
+.form__input-error_login {
+  margin-bottom: 5px;
+}
+
+.form__input-message_login {
+  margin: 126px auto 15px;
+}
+
+.input__not-message_login {
+  margin: 126px auto 15px;
+  height: 14px;
 }
 
 .form__button-submit {
@@ -111,7 +125,7 @@
 
 .form__button-submit_login {
   letter-spacing: 0.4px;
-  margin-top: 156px;
+  /* margin-top: 156px; */
   width: 396px;
   height: 45px;
 }
@@ -161,7 +175,7 @@
   }
 
   .form__button-submit_login {
-    margin-top: 157px;
+    /* margin-top: 157px; */
   }
   .form__register {
     padding-top: 17px;
@@ -176,38 +190,53 @@
     width: 260px;
     align-items: center;
   }
-  
+
   .login__header-logo {
     margin: 0 0 47px;
   }
-  
+
   .login__header-title {
     font-weight: 400;
     text-align: center;
   }
 
   .form__input_login {
-    width: 260px;
-    margin-bottom: 9px;
+    width: 244px;
+    /* margin-bottom: 4px; */
   }
 
   .form__button-submit_login {
     width: 260px;
-    margin-top: 246px;
+    /* margin-top: 246px; */
     font-size: 12px;
     line-height: 1.25;
+  }
+
+  .form__input-error_login {
+    margin-bottom: 3px;
+    height: 12px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .form__input-message_login {
+    margin: 217px auto 15px;
+  }
+
+  .input__not-message_login {
+    margin: 217px auto 15px;
   }
 
   .form__register {
     padding-bottom: 30px;
     padding-top: 15px;
   }
-  
+
   .form__register-text {
     font-size: 12px;
     line-height: 1.25;
   }
-  
+
   .form__register-link {
     font-size: 12px;
     line-height: 1.25;

@@ -64,14 +64,6 @@
 }
 
 .form__input {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.23;
-  letter-spacing: 0em;
-  text-align: left;
-  border: none;
-  border-radius: 8px;
-  background-color: rgba(249, 249, 249, 1);
 }
 
 .form__input::placeholder {
@@ -85,9 +77,26 @@
 }
 
 .form__input_register {
-  width: 396px;
+  /* font-size: 13px;
+  font-weight: 400;
+  line-height: 1.23;
+  letter-spacing: 0em;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(249, 249, 249, 1); */
+  width: 381px;
   height: 44px;
-  margin-bottom: 10px;
+  padding-left: 15px;
+  /* margin-bottom: 10px; */
+}
+
+/* .form__input_register::placeholder {
+  padding-left: 15px;
+} */
+
+.form__input_red {
+  color: rgba(255, 64, 98, 1);
 }
 
 .form__input-error {
@@ -99,12 +108,24 @@
   text-align: left;
   /* margin-top: 10px; */
   align-self: flex-start;
-  padding-bottom: 11px;
-  margin-left: 2px;
-  opacity: 0;
+  /* padding-bottom: 11px; */
+  /* margin-left: 2px; */
+  /* opacity: 0; */
+  height: 12px;
+  padding-top: 5px;
 }
 
-.form__input-title-error {
+.form__input-error_register {
+  margin-bottom: 5px;
+}
+
+.form__input-message_register {
+  margin: 36px auto 15px;
+}
+
+.input__not-message_register {
+  margin: 36px auto 15px;
+  height: 14px;
 }
 
 .form__button-submit {
@@ -124,9 +145,13 @@
   transition: opacity 0.4s linear;
 }
 
+.form__button-submit:disabled {
+  opacity: 50%;
+}
+
 .form__button-submit_register {
   letter-spacing: 0.7px;
-  margin-top: 57px;
+  /* margin-top: 57px; */
   width: 396px;
   height: 45px;
 }
@@ -172,7 +197,7 @@
   }
 
   .form__button-submit_register {
-    margin-top: 56px;
+    /* margin-top: 56px; */
   }
 
   .form__login {
@@ -198,15 +223,31 @@
   }
 
   .form__input_register {
-    width: 260px;
-    margin-bottom: 9px;
+    width: 244px;
+    /* margin-bottom: 4px; */
+    /* margin-bottom: 9px; */
   }
 
   .form__button-submit_register {
     width: 260px;
-    margin-top: 146px;
+    /* margin-top: 146px; */
     font-size: 12px;
     line-height: 1.25;
+    letter-spacing: -0.4px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .form__input-error_register {
+    margin-bottom: 3px;
+  }
+
+  .form__input-message_register {
+    margin: 129px auto 15px;
+  }
+
+  .input__not-message_reister {
+    margin: 129px auto 15px;
   }
 
   .form__login {

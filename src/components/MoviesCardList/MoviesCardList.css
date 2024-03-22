@@ -17,9 +17,9 @@
   box-sizing: border-box;
 }
 
-.cards__item {
+/* .cards__item {
   list-style-type: none;
-}
+} */
 
 .cards__button {
   border: none;
@@ -48,12 +48,12 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 45px;
     column-gap: 30px;
-    padding-bottom: 193px;
+    padding-bottom: 0px;
     margin: 0 auto;
   }
 
   .cards__button {
-    margin: 50px auto 80px;
+    margin: 60px auto 97px;
   }
 }
 
@@ -65,7 +65,7 @@
   .cards__list {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 36px;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
     margin: 0 auto;
   }
 
