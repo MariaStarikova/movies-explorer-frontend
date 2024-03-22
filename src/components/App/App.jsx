@@ -12,6 +12,7 @@ import Profile from '../Profile/Profile';
 import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';
 import Popup from '../Popup/Popup';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.jsx';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import { mainApi } from '../../utils/MainApi.js';
 import * as auth from '../../utils/auth.js';
@@ -154,7 +155,9 @@ function App() {
   function handleSignOut() {
     localStorage.removeItem('jwt');
     localStorage.removeItem('searchQuery');
+    localStorage.removeItem('searchQuerySaved');
     localStorage.removeItem('isChecked');
+    localStorage.removeItem('isCheckedSaved');
     setLoggedIn(false);
     navigate('/', { replace: true });
   }
@@ -224,7 +227,8 @@ function App() {
             <Route
               path="/movies"
               element={
-                <Movies
+                <ProtectedRoute
+                  element={Movies}
                   loggedIn={loggedIn}
                   handleAddSavedMovie={handleAddSavedMovie}
                   savedMovies={savedMovies}
@@ -235,7 +239,8 @@ function App() {
             <Route
               path="/saved-movies"
               element={
-                <SavedMovies
+                <ProtectedRoute
+                  element={SavedMovies}
                   loggedIn={loggedIn}
                   savedMovies={savedMovies}
                   setSavedMovies={setSavedMovies}
@@ -246,7 +251,8 @@ function App() {
             <Route
               path="/profile"
               element={
-                <Profile
+                <ProtectedRoute
+                  element={Profile}
                   onUpdateUser={handleUpdateUser}
                   onSignOut={handleSignOut}
                   loggedIn={loggedIn}
