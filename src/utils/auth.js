@@ -1,5 +1,5 @@
-export const BASE_URL = 'http://localhost:3000';
-// export const BASE_URL = 'https://api.mstar.students.nomoredomainsmonster.ru';
+// export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.movies.nomoredomainswork.ru';
 
 export const register = (name, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -7,6 +7,7 @@ export const register = (name, email, password) => {
     headers: {
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify({ name, email, password })
   }).then(res => checkResponse(res));
 };
@@ -16,7 +17,7 @@ export const authorize = (email, password) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      'Authorization': `Bearer ${localStorage.getItem('jwt')}`
     },
     body: JSON.stringify({ email, password })
   }).then(res => checkResponse(res));
@@ -27,7 +28,7 @@ export const checkToken = token => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`
+      'Authorization': `Bearer ${token}`
     }
   }).then(res => checkResponse(res));
 };

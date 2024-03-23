@@ -29,7 +29,7 @@ export const moviesApi = new MoviesApi({
 });
 
 // export const moviesApi = new MoviesApi({
-//   baseUrl: 'http://localhost:3000',
+//   baseUrl: 'https://api.movies.nomoredomainswork.ru',
 //   headers: {
 //     'Content-Type': 'application/json'
 //   }
