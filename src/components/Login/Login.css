@@ -1,0 +1,245 @@
+.login {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 396px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 40px;
+}
+
+.login__header-link {
+  cursor: pointer;
+}
+
+.login__header-link:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
+.login__header-logo {
+  width: 38px;
+  height: 38px;
+  margin: 0 0 37px;
+}
+
+.login__header-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.21;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+
+.login__form {
+}
+
+.form__user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__name-input {
+  color: rgba(160, 160, 160, 1);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.form__name-input_login {
+  margin: 0 0 10px 2px;
+}
+
+.form__input {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.23;
+  letter-spacing: 0em;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(249, 249, 249, 1);
+}
+
+.form__input_login {
+  width: 381px;
+  height: 44px;
+  padding-left: 15px;
+  /* margin-bottom: 10px; */
+}
+
+/* .form__input_login::placeholder {
+  padding-left: 15px;
+} */
+
+.form__input-error {
+  /* color: rgba(255, 64, 98, 1);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+  align-self: flex-start;
+  padding-bottom: 11px;
+  margin-left: 2px; */
+  /* opacity: 0; */
+}
+
+.form__input-error_login {
+  margin-bottom: 5px;
+}
+
+.form__input-message_login {
+  margin: 126px auto 15px;
+}
+
+.input__not-message_login {
+  margin: 126px auto 15px;
+  height: 14px;
+}
+
+.form__button-submit {
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.form__button-submit_login {
+  letter-spacing: 0.4px;
+  /* margin-top: 156px; */
+  width: 396px;
+  height: 45px;
+}
+
+.form__register {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 70px;
+}
+
+.form__register-text {
+  color: rgba(160, 160, 160, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0;
+}
+
+.form__register-link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0 0 0 6px;
+}
+
+.form__register-link:hover {
+  opacity: 70%;
+  transition: opacity 0.4s linear;
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .login__header {
+    padding-top: 232px;
+    padding-bottom: 40px;
+  }
+
+  .login__header-logo {
+    margin: 0 0 36px;
+  }
+
+  .form__button-submit_login {
+    /* margin-top: 157px; */
+  }
+  .form__register {
+    padding-top: 17px;
+    padding-bottom: 230px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .login__header {
+    padding-top: 56px;
+    padding-bottom: 80px;
+    width: 260px;
+    align-items: center;
+  }
+
+  .login__header-logo {
+    margin: 0 0 47px;
+  }
+
+  .login__header-title {
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .form__input_login {
+    width: 244px;
+    /* margin-bottom: 4px; */
+  }
+
+  .form__button-submit_login {
+    width: 260px;
+    /* margin-top: 246px; */
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .form__input-error_login {
+    margin-bottom: 3px;
+    height: 12px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .form__input-message_login {
+    margin: 217px auto 15px;
+  }
+
+  .input__not-message_login {
+    margin: 217px auto 15px;
+  }
+
+  .form__register {
+    padding-bottom: 30px;
+    padding-top: 15px;
+  }
+
+  .form__register-text {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .form__register-link {
+    font-size: 12px;
+    line-height: 1.25;
+    margin: 0 0 0 7px;
+  }
+}
