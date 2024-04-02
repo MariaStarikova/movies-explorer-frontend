@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { Route, Routes, useNavigate, useLocation, Navigate } from 'react-router-dom';
 
 import './App.css';
 import Header from '../Header/Header';
@@ -13,6 +13,7 @@ import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';
 import Popup from '../Popup/Popup';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.jsx';
+import Preloader from '../Preloader/Preloader.jsx';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import { mainApi } from '../../utils/MainApi.js';
 import * as auth from '../../utils/auth.js';
@@ -31,6 +32,7 @@ function App() {
   const [isMessageForm, setIsMessageForm] = useState(''); //сообщение об ошибках в Login и Register
   const location = useLocation();
   const [savedMovies, setSavedMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   //Получение токена
   useEffect(() => {
@@ -42,11 +44,15 @@ function App() {
           if (user) {
             setLoggedIn(true);
           }
+          setIsLoading(false);
         })
         .catch(err => {
           console.error(err);
           localStorage.clear();
+          setIsLoading(false);
         });
+    } else {
+      setIsLoading(false);
     }
   }, [navigate]);
 
@@ -203,6 +209,10 @@ function App() {
     setOpenPopup(false);
   }
 
+  if (isLoading) {
+    return <Preloader />;
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -211,16 +221,26 @@ function App() {
           <Routes>
             <Route
               path="/signup"
-              element={<Register handleRegister={handleRegister} isMessageForm={isMessageForm} />}
+              element={
+                loggedIn ? (
+                  <Navigate to="/" replace />
+                ) : (
+                  <Register handleRegister={handleRegister} isMessageForm={isMessageForm} />
+                )
+              }
             />
             <Route
               path="/signin"
               element={
-                <Login
-                  handleLogin={handleLogin}
-                  loggedIn={loggedIn}
-                  isMessageForm={isMessageForm}
-                />
+                loggedIn ? (
+                  <Navigate to="/" replace />
+                ) : (
+                  <Login
+                    handleLogin={handleLogin}
+                    loggedIn={loggedIn}
+                    isMessageForm={isMessageForm}
+                  />
+                )
               }
             />
             <Route path="/" element={<Main />} />
