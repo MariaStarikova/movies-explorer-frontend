@@ -77,6 +77,7 @@ function App() {
   useEffect(() => {
     setIsMessageForm('');
     setIsMessageSuccessProfile('');
+    setIsOpenEdit(false);
   }, [location.pathname]);
 
   //Запрос к серверу на получение сохраненных фильмов
