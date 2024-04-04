@@ -253,6 +253,7 @@ function App() {
                   handleAddSavedMovie={handleAddSavedMovie}
                   savedMovies={savedMovies}
                   setSavedMovies={setSavedMovies}
+                  handleRemoveSavedMovie={handleRemoveSavedMovie}
                 />
               }
             />

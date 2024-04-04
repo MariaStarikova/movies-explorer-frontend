@@ -69,6 +69,7 @@ function MoviesCardList({
                   handleAddSavedMovie={handleAddSavedMovie}
                   savedMoviesData={savedMoviesData}
                   movie={card}
+                  handleRemoveSavedMovie={handleRemoveSavedMovie}
                 />
               ))}
             </ul>

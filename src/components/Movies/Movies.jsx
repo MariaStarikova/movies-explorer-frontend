@@ -4,7 +4,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import { moviesApi } from '../../utils/MoviesApi.js';
 
-function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies }) {
+function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, handleRemoveSavedMovie }) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [shorts, setShorts] = useState(false); //Состояние для коротких фильмов
@@ -131,6 +131,7 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies }) 
           setSavedMovies={setSavedMovies}
           savedMoviesData={savedMovies}
           movies={movies}
+          handleRemoveSavedMovie={handleRemoveSavedMovie}
         />
       )}
       {error && (

@@ -60,7 +60,10 @@
   transition: opacity 0.4s linear;
 }
 
-.card__icon {
+.card__button_icon {
+  background-image: url('../../images/iconSaved.svg');
+  border: none;
+  background-color: transparent;
   position: absolute;
   top: 14px;
   right: 14px;
@@ -69,6 +72,16 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* .card__icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  cursor: pointer;
+} */
 
 .card__button-del {
   border: none;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './MoviesCard.css';
-import CardIcon from '../../images/iconSaved.svg';
 
 function MoviesCard({
   handleAddSavedMovie,
@@ -46,13 +45,21 @@ function MoviesCard({
     // setIsSaveMovie(savedMoviesData.movies.some(item => movie.id === item.movieId));
   };
 
-  // Клик на кнопку удаления из сохраненных
+  // Клик на кнопку удаления из сохраненных и на иконку галочки
   const handleClickRemove = () => {
+    if (location.pathname === '/movies') {
+    let savedMovieId;
+    savedMoviesData.movies.forEach(savedMovie => {
+      if (savedMovie.movieId === movie.id) {
+        savedMovieId = savedMovie._id;
+      }
+    });
+    handleRemoveSavedMovie(savedMovieId);
+    console.log('savedMovieId', savedMovieId);
+  }
+
     if (location.pathname === '/saved-movies') {
-      // console.log('movie._id', movie._id);
-      // console.log('savedMovies', savedMovies);
-      handleRemoveSavedMovie(movie._id);
-      // console.log('movie', movie);
+    handleRemoveSavedMovie(movie._id);
     }
   };
 
@@ -69,7 +76,11 @@ function MoviesCard({
               Сохранить
             </button>
             {!isSaveMovie ? (
-              <img className="card__icon" src={CardIcon} alt="Иконка сохранения" />
+              <button
+                type="button"
+                className="card__button_icon"
+                onClick={handleClickRemove}
+              ></button>
             ) : null}
             <a href={movie.trailerLink} className="card__link" target="_blank" rel="noreferrer">
               <img
