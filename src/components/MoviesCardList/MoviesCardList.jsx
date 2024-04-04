@@ -15,28 +15,26 @@ function MoviesCardList({
 }) {
   const location = useLocation();
   const [width, setWidth] = useState(window.innerWidth); //состояние ширины экрана
-  const [visibleMoviesCount, setVisibleMoviesCount] = useState(getInitialVisibleMoviesCount()); //состояние количества карточек
+  const [visibleMoviesCount, setVisibleMoviesCount] = useState(0); //состояние количества карточек
 
   //Обраточик события при изменении размера экрана и установка количества карточек в зависимости от этого значения
   useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
     window.addEventListener('resize', handleResizeWindow);
-    setVisibleMoviesCount(getInitialVisibleMoviesCount());
+    if (width > 1279) {
+      let countCards = 12;
+      setVisibleMoviesCount(countCards);
+    } else if (width <= 1279 && width >= 768) {
+      let countCards = 8;
+      setVisibleMoviesCount(countCards);
+    } else if (width < 767) {
+      let countCards = 5;
+      setVisibleMoviesCount(countCards);
+    }
     return () => {
       window.removeEventListener('resize', handleResizeWindow);
     };
   }, [width]);
-
-  //Функция определения количества карточек в зависимости от ширины экрана
-  function getInitialVisibleMoviesCount() {
-    if (width > 1279) {
-      return 12;
-    } else if (width <= 1279 && width >= 768) {
-      return 8;
-    } else if (width < 767) {
-      return 5;
-    }
-  }
 
   // Увеличиваем количество видимых фильмов при нажатии на кнопку "Еще"
   const handleShowMore = () => {
