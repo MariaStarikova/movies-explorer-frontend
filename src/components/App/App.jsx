@@ -162,9 +162,7 @@ function App() {
   function handleSignOut() {
     localStorage.removeItem('jwt');
     localStorage.removeItem('searchQuery');
-    localStorage.removeItem('searchQuerySaved');
     localStorage.removeItem('isChecked');
-    localStorage.removeItem('isCheckedSaved');
     setLoggedIn(false);
     navigate('/', { replace: true });
   }
