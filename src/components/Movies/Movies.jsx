@@ -4,15 +4,22 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import { moviesApi } from '../../utils/MoviesApi.js';
 
-function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, handleRemoveSavedMovie }) {
+function Movies({
+  loggedIn,
+  handleAddSavedMovie,
+  setSavedMovies,
+  savedMovies,
+  handleRemoveSavedMovie
+}) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [shorts, setShorts] = useState(false); //Состояние для коротких фильмов
+  // const [shorts, setShorts] = useState(false); //Состояние для коротких фильмов
   const [searchInput, setSearchInput] = useState(''); //Состояние для поля поиска
   const [isChecked, setIsChecked] = useState(false); //Состояние для чекбокса
   const [initialMovies, setInitialMovies] = useState([]); //Сохранение изначального массива с фильмами
   const [error, setError] = useState(null); //Состояние ошибки сервера
   const [noResults, setNoResults] = useState(false); //Состояние для отображения сообщения "Ничего не найдено"
+  const [prevSearchResults, setPrevSearchResults] = useState([]); // Состояние для сохранения результатов предыдущего поиска
 
   //Запрос на сервер для получения всех фильмов при монтировании компонента и отрисовка на странице
   useEffect(() => {
@@ -21,7 +28,6 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
       moviesApi
         .getInitialCards()
         .then(moviesData => {
-          setMovies(moviesData);
           setInitialMovies(moviesData);
           setLoading(false);
           // console.log('moviesData: ', moviesData);
@@ -33,7 +39,7 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
     }
   }, [loggedIn]);
 
-  //Получение из локального хранилища значений поиска и состояния чекбокса, отрисовка с учетом этих значений для текущего пользователя
+  // Получение из локального хранилища значений поиска и состояния чекбокса, отрисовка с учетом этих значений для текущего пользователя
   useEffect(() => {
     const token = localStorage.getItem('jwt');
     if (token) {
@@ -54,7 +60,7 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
     }
   }, [initialMovies]);
 
-  //Функция моментального поиска фильма при введении в поле значения
+  //Функция поиска фильма 
   const filterMovies = (query, shorts) => {
     if (loading === true) {
       setError(false);
@@ -62,7 +68,7 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
     }
 
     // Проверяем, что query не равен null
-    if (query !== null) {
+    if (query !== null && query.trim() !== '') {
       const lowercaseQuery = query.toLowerCase();
       const filteredMovies = initialMovies.filter(
         movie =>
@@ -72,7 +78,9 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
             movie.nameEN.toLowerCase().includes(lowercaseQuery))
       );
       // console.log('filteredMovies', filteredMovies);
+      setPrevSearchResults(filteredMovies);
       setMovies(filteredMovies);
+
 
       if (filteredMovies.length === 0) {
         setNoResults(true);
@@ -85,17 +93,17 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
   //Функция для чекбокса, которая устанавливает состояние чекбокса и состояние короткометражек
   const handleShortsFilter = isChecked => {
     setIsChecked(isChecked);
-    setShorts(isChecked);
+    filterMovies(searchInput, isChecked);
+
+    // Сохранение значения в локальное хранилище
+    localStorage.setItem('isChecked', isChecked);
     // console.log('isChecked handleShortsFilter', isChecked);
-    filterMovies(searchInput, isChecked); //фильтрация при изменении состояния чекбокса
   };
 
   //Функция для установки введенного значения в инпут
   const handleSearchInputChange = event => {
     const value = event.target.value;
     setSearchInput(value);
-    // console.log('isChecked handleSearchInputChange', isChecked);
-    filterMovies(value, isChecked); //фильтрация при изменении ввода
   };
 
   //Функция сабмита при нажатии на кнопку "Найти"
@@ -104,9 +112,15 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
     filterMovies(searchInput, isChecked);
     setLoading(false);
 
-    // Сохранение значений в локальное хранилище при отправке формы
+    // Сохранение значения в локальное хранилище 
     localStorage.setItem('searchQuery', searchInput);
-    localStorage.setItem('isChecked', isChecked);
+  };
+
+  // Обработка очистки строки поиска
+  const handleSearchClear = () => {
+    setMovies(prevSearchResults);
+    setSearchInput('');
+    setNoResults(false);
   };
 
   // console.log('loggedIn', loggedIn);
@@ -121,10 +135,10 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
         handleSearchInputChange={handleSearchInputChange}
         handleShortsFilter={handleShortsFilter}
         searchInput={searchInput}
-        setSearchInput={setSearchInput}
         handleSearchSubmit={handleSearchSubmit}
+        handleSearchClear={handleSearchClear}
       />
-      {searchInput && ( // Проверяем, был ли выполнен поисковый запрос (для нового пользователя)
+      {searchInput || prevSearchResults.length > 0 ? (
         <MoviesCardList
           loading={loading}
           handleAddSavedMovie={handleAddSavedMovie}
@@ -133,6 +147,8 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
           movies={movies}
           handleRemoveSavedMovie={handleRemoveSavedMovie}
         />
+      ) : (
+        !loading && noResults && <span className="movies__error">Ничего не найдено.</span>
       )}
       {error && (
         <span className="movies__error">
@@ -140,9 +156,9 @@ function Movies({ loggedIn, handleAddSavedMovie, setSavedMovies, savedMovies, ha
           Подождите немного и попробуйте ещё раз.
         </span>
       )}
-      {!loading && noResults && <span className="movies__error">Ничего не найдено.</span>}
     </section>
   );
 }
 
 export default Movies;
+
