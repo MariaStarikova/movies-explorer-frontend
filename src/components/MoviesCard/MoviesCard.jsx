@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './MoviesCard.css';
+import { mainApi } from '../../utils/MainApi.js';
 
 function MoviesCard({
   handleAddSavedMovie,
@@ -21,11 +22,20 @@ function MoviesCard({
 
   //Если мы на маршруте /movies, то проверяем какие фильмы сохранены
   useEffect(() => {
-    if (location.pathname === '/movies' && savedMoviesData.movies) {
+    if (location.pathname === '/movies') {
+      mainApi
+        .getSavedMovies()
+        .then(moviesData => {
+          setSavedMovies(moviesData);
+          console.log('moviesData', moviesData);
+          setIsSaveMovie(!moviesData.movies.some(savedMovie => savedMovie.movieId === movie.id));
+        })
+        .catch(error => {
+          console.error(`Ошибка при получении данных: ${error}`);
+        });
       // console.log('savedMoviesData', savedMoviesData);
-      setIsSaveMovie(!savedMoviesData.movies.some(savedMovie => savedMovie.movieId === movie.id));
     }
-  }, [location.pathname, movie.id, savedMoviesData]);
+  }, []);
 
   //Конвертация в часы и минуты продолжительность
   function convertingMinutes(movie) {
@@ -42,7 +52,6 @@ function MoviesCard({
     setIsSaveMovie(!isSaveMovie);
     handleAddSavedMovie(movie);
     // console.log('savedMoviesData', savedMoviesData);
-    // setIsSaveMovie(savedMoviesData.movies.some(item => movie.id === item.movieId));
   };
 
   // Клик на кнопку удаления из сохраненных и на иконку галочки

@@ -34,6 +34,10 @@ function MoviesCardList({
     };
   }, [width]);
 
+  // useEffect(() => {
+  //   console.log(visibleMoviesCount)
+  // }, [visibleMoviesCount])
+  
   // Увеличиваем количество видимых фильмов при нажатии на кнопку "Еще"
   const handleShowMore = () => {
     if (width > 1240) {
@@ -65,6 +69,7 @@ function MoviesCardList({
                   savedMoviesData={savedMoviesData}
                   movie={card}
                   handleRemoveSavedMovie={handleRemoveSavedMovie}
+                  setSavedMovies={setSavedMovies}
                 />
               ))}
             </ul>
