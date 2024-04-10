@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
-import Preloader from '../Preloader/Preloader';
 
 function MoviesCardList({
-  loading,
   movies,
   handleAddSavedMovie,
   savedMovies,
@@ -57,9 +55,6 @@ function MoviesCardList({
 
   return (
     <section className="cards">
-      {loading ? (
-        <Preloader />
-      ) : (
         <div className="cards__container">
           {location.pathname === '/movies' ? (
             <ul className="cards__list">
@@ -94,7 +89,6 @@ function MoviesCardList({
             </button>
           )}
         </div>
-      )}
     </section>
   );
 }

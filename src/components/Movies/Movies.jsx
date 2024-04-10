@@ -3,6 +3,7 @@ import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import { moviesApi } from '../../utils/MoviesApi.js';
+import Preloader from '../Preloader/Preloader.jsx';
 
 function Movies({
   loggedIn,
@@ -13,7 +14,6 @@ function Movies({
 }) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [shorts, setShorts] = useState(false); //Состояние для коротких фильмов
   const [searchInput, setSearchInput] = useState(''); //Состояние для поля поиска
   const [isChecked, setIsChecked] = useState(false); //Состояние для чекбокса
   const [initialMovies, setInitialMovies] = useState([]); //Сохранение изначального массива с фильмами
@@ -60,7 +60,7 @@ function Movies({
     }
   }, [initialMovies]);
 
-  //Функция поиска фильма 
+  //Функция поиска фильма
   const filterMovies = (query, shorts) => {
     if (loading === true) {
       setError(false);
@@ -81,7 +81,6 @@ function Movies({
       setPrevSearchResults(filteredMovies);
       setMovies(filteredMovies);
 
-
       if (filteredMovies.length === 0) {
         setNoResults(true);
       } else {
@@ -90,10 +89,14 @@ function Movies({
     }
   };
 
-  //Функция для чекбокса, которая устанавливает состояние чекбокса и состояние короткометражек
+  //Функция для чекбокса, которая устанавливает состояние чекбокса
   const handleShortsFilter = isChecked => {
+    setLoading(true);
     setIsChecked(isChecked);
     filterMovies(searchInput, isChecked);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500); 
 
     // Сохранение значения в локальное хранилище
     localStorage.setItem('isChecked', isChecked);
@@ -111,9 +114,11 @@ function Movies({
   const handleSearchSubmit = () => {
     setLoading(true);
     filterMovies(searchInput, isChecked);
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500); 
 
-    // Сохранение значения в локальное хранилище 
+    // Сохранение значения в локальное хранилище
     localStorage.setItem('isChecked', isChecked);
     localStorage.setItem('searchQuery', searchInput);
   };
@@ -128,6 +133,7 @@ function Movies({
   // console.log('loggedIn', loggedIn);
   // console.log(movies, "Movies");
   // console.log('savedMovies', savedMovies);
+  // console.log('loading', loading);
 
   return (
     <section className="movies">
@@ -140,18 +146,18 @@ function Movies({
         handleSearchSubmit={handleSearchSubmit}
         handleSearchClear={handleSearchClear}
       />
-      {searchInput || prevSearchResults.length > 0 ? (
+      {loading && <Preloader />}
+      {!loading && (searchInput || prevSearchResults.length > 0) && (
         <MoviesCardList
-          loading={loading}
           handleAddSavedMovie={handleAddSavedMovie}
           setSavedMovies={setSavedMovies}
           savedMoviesData={savedMovies}
           movies={movies}
           handleRemoveSavedMovie={handleRemoveSavedMovie}
         />
-      ) : (
-        !loading && noResults && <span className="movies__error">Ничего не найдено.</span>
       )}
+      {!loading && noResults && <span className="movies__error">Ничего не найдено.</span>}
+
       {error && (
         <span className="movies__error">
           Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.
@@ -163,4 +169,3 @@ function Movies({
 }
 
 export default Movies;
-
