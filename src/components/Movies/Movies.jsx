@@ -97,6 +97,7 @@ function Movies({
 
     // Сохранение значения в локальное хранилище
     localStorage.setItem('isChecked', isChecked);
+    localStorage.setItem('searchQuery', searchInput);
     // console.log('isChecked handleShortsFilter', isChecked);
   };
 
@@ -113,6 +114,7 @@ function Movies({
     setLoading(false);
 
     // Сохранение значения в локальное хранилище 
+    localStorage.setItem('isChecked', isChecked);
     localStorage.setItem('searchQuery', searchInput);
   };
 
