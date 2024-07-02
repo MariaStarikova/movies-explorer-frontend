@@ -1,0 +1,21 @@
+.burger {
+  background-image: url('../../images/BurgerIcon.svg');
+  background-color: transparent;
+  border: none;
+  width: 28px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.burger:hover {
+  opacity: 80%;
+  transition: opacity 0.4s linear;
+}
+
+@media screen and (max-width: 549px) {
+  .burger {
+    background-image: url('../../images/BurgerMobile.svg');
+    width: 22px;
+    height: 21px;
+  }
+}

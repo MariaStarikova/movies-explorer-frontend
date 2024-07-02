@@ -1,0 +1,106 @@
+.filter {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  margin-right: 30px;
+  padding-left: 30px;
+  border-left: 1px solid rgba(203, 203, 203, 1);
+  height: 40px;
+}
+
+.filter__title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.filter__input {
+}
+
+.filter .filter__input {
+  appearance: none;
+  background-color: #dfe1e4;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 14px;
+  margin: 0;
+  position: relative;
+  width: 34px;
+}
+
+.filter .filter__input::before {
+  bottom: -6px;
+  content: '';
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+}
+
+.filter .filter__input,
+.filter .filter__input::after {
+  transition: all 100ms ease-out;
+}
+
+.filter .filter__input::after {
+  background-color: rgba(245, 245, 245, 1);
+  border-radius: 20px;
+  content: '';
+  height: 10px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 10px;
+}
+
+.filter input[type='checkbox'] {
+  cursor: default;
+}
+
+.filter .filter__input:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+  cursor: pointer;
+}
+
+.filter .filter__input:checked {
+  background-color: rgba(43, 224, 128, 1);
+}
+
+.filter .filter__input:checked::after {
+  background-color: rgba(255, 255, 255, 1);
+  left: 21px;
+}
+
+.filter :focus:not(.focus-visible) {
+  outline: 0;
+}
+
+.filter .filter__input:checked:hover {
+  background-color: rgba(43, 224, 128, 1);
+}
+
+@media screen and (min-width: 605px) and (max-width: 1024px) {
+  .filter {
+    margin-right: 20px;
+    padding-left: 21px;
+  }
+}
+
+@media screen and (max-width: 604px) {
+  .filter {
+    border: none;
+    padding: 0;
+    margin: 35px auto 0;
+  }
+
+  .filter__title {
+    font-size: 11px;
+    line-height: 1.64;
+  }
+}
