@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutMe.css';
-import MePhoto from '../../images/me-photo.png';
+import MePhoto from '../../images/photo.jpeg';
 
 function AboutMe() {
   return (
@@ -8,13 +8,10 @@ function AboutMe() {
       <h2 className="me__title">Студент</h2>
       <div className="me__description">
         <div className="me__description-content">
-          <h3 className="me__description-title">Виталий</h3>
-          <p className="me__description-subtitle">Фронтенд-разработчик, 30 лет</p>
+          <h3 className="me__description-title">Мария</h3>
+          <p className="me__description-subtitle">Фронтенд-разработчик, 24 года</p>
           <p className="me__description-text">
-            Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена и дочь.
-            Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал
-            в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься
-            фриланс-заказами и ушёл с постоянной работы.
+            Я родилась в Оренбургской области, живу в Екатеринбурге, закончила архитектурно-строительный факультет по специальности "Теплогазоснабжение и вентиляция", работала проектировщиком. Прошла обучение по разработке, совершенствуюсь в знаниях и мечтаю найти классную работу.
           </p>
           <a
             className="me__description-git"
