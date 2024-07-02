@@ -50,7 +50,7 @@
 ## Инструкция по использованию проекта
 
 - `git clone https://github.com/MariaStarikova/movies-explorer-frontend.git` - клонирование репозитория с кодом фронтенд части
-- `git clone https://github.com/MariaStarikova/movies-explorer-api.git` - клонирование репозитория с кодом фронтенд части
+- `git clone https://github.com/MariaStarikova/movies-explorer-api.git` - клонирование репозитория с кодом бэкенд части
 
 ### Frontend:
 
@@ -68,7 +68,7 @@
 
 ## Ссылки
 
-- [Макет в Figma light-4](https://www.figma.com/design/6FMWkB94wE7KTkcCgUXtnC/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82?node-id=891-3857)
+- [Макет в Figma light-4](https://www.figma.com/design/6FMWkB94wE7KTkcCgUXtnC/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82?node-id=1-2798)
 - [Репозиторий проекта](https://github.com/MariaStarikova/movies-explorer-frontend)
 - [Репозиторий бэкенд части](https://github.com/MariaStarikova/movies-explorer-api)
 
